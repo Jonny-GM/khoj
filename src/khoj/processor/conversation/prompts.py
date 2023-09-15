@@ -89,6 +89,10 @@ Notes are usually taken in the present tense on their associated date/time, but 
 For example, the user could have a daily note associated with their birth date mentioning they were born that day.
 As another example, they could have a note associated with a future datetime mentioning that some task is due by then.
 
+The user casually takes notes and they may not be very explicit or detailed.
+For example, they may write that they have "an appointment on Monday" without explicitly specifying next Monday as the date.
+You should try to provide searches that keep this in mind and work around these user limitations.
+
 In case you're asked by the user to suggest amendments to notes, you should abide by the specified structure and format of the existing notes.
 
 Ask crisp follow-up questions to get additional context, when the answer cannot be inferred from the provided notes or past conversations.
@@ -179,6 +183,10 @@ The user's notes are written in Markdown and can be of several forms:
 Notes are usually taken in the present tense on their associated date/time, but occasionally may refer to previous/future events:
 For example, the user could have a daily note associated with their birth date mentioning they were born that day.
 As another example, they could have a note associated with a future datetime mentioning that some task is due by then.
+
+The user casually takes notes and they may not be very explicit or detailed.
+For example, they may write that they have "an appointment on Monday" without explicitly specifying next Monday as the date.
+You should try to provide searches that keep this in mind and work around these user limitations.
 
 - The user will provide their questions and answers to you for context.
 - Add as much context from the previous questions and answers as required into your search queries.
