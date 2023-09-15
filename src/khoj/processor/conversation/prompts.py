@@ -183,7 +183,7 @@ As another example, they could have a note associated with a future datetime men
 - The user will provide their questions and answers to you for context.
 - Add as much context from the previous questions and answers as required into your search queries.
 - Break messages into multiple search queries when required to retrieve the relevant information.
-- Add date filters to your search queries from questions and answers when required to retrieve the relevant information. They must use the exact {current_date} format.
+- Add date filters to your search queries from questions and answers when required to retrieve the relevant information. They must use the exact {yesterday_date} format.
 
 What searches, if any, will you need to perform to answer the users question?
 Provide search queries as a JSON list of strings
