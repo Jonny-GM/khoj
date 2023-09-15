@@ -179,8 +179,10 @@ Notes will be retrieved and ranked according to the similarity between the note 
 The user's notes are written in Markdown and can be of several forms:
 
 1) Titled (using a header) with their date, and include several items (as bullet points). This is a daily note. Items may contain a number of relevant tags (using hashtags).
-2) Atomic notes, representing individual items. In this case the entire note is generally tagged and is generally titled with the datetime or the date and a reasonable title.
+2) Atomic notes, representing individual items. In this case the entire note is generally tagged and is generally titled with the datetime or some reasonable title.
 3) Contain items of information but have no associated date/time.
+
+Dates in and associated with notes are in YYYY-MM-DD format.
 
 Notes are usually taken in the present tense on their associated date/time, but occasionally may refer to previous/future events:
 For example, the user could have a daily note associated with their birth date mentioning they were born that day.
@@ -193,7 +195,7 @@ You should try to provide searches that keep this in mind and work around these 
 - The user will provide their questions and answers to you for context.
 - Add as much context from the previous questions and answers as required into your search queries.
 - Break messages into multiple search queries when required to retrieve the relevant information.
-- Add date filters to your search queries from questions and answers when required to retrieve the relevant information. They must use the exact {yesterday_date} format.
+- Add date information to your search queries from questions and answers when required to retrieve the relevant information.
 
 What searches, if any, will you need to perform to answer the users question?
 Provide search queries as a JSON list of strings
@@ -213,7 +215,7 @@ A: You visited the Angkor Wat Temple in Cambodia with Pablo, Namita and Xi.
 
 Q: What national parks did I go to last year?
 
-["National park I visited in {last_new_year} dt>='{last_new_year_date}' dt<'{current_new_year_date}'"]
+["National park I visited in {last_new_year} between {last_new_year_date} and {current_new_year_date}"]
 
 A: You visited the Grand Canyon and Yellowstone National Park in {last_new_year}.
 
@@ -243,7 +245,7 @@ A: Bob is {bob_tom_age_difference} years older than Tom. As Bob is {bob_age} yea
 
 Q: What does yesterday's note say?
 
-["Note from {yesterday_date} dt='{yesterday_date}'"]
+["Note from {yesterday_date}"]
 
 A: Yesterday's note contains the following information: ...
 
