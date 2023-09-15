@@ -78,15 +78,18 @@ conversation_llamav2 = PromptTemplate.from_template(
 notes_conversation = PromptTemplate.from_template(
     """
 Using my personal notes and our past conversations as context, answer the following question.
-Notes can be of several forms:
 
-1) Titled with their date, and include several items (as bullet points). This is a daily note. Items may contain a number of relevant tags (using hashtags).
+The user's notes are written in Markdown and can be of several forms:
+
+1) Titled (using a header) with their date, and include several items (as bullet points). This is a daily note. Items may contain a number of relevant tags (using hashtags).
 2) Atomic notes, representing individual items. In this case the entire note is generally tagged and is generally titled with the datetime or the date and a reasonable title.
 3) Contain items of information but have no associated date/time.
 
 Notes are usually taken in the present tense on their associated date/time, but occasionally may refer to previous/future events:
 For example, the user could have a daily note associated with their birth date mentioning they were born that day.
 As another example, they could have a note associated with a future datetime mentioning that some task is due by then.
+
+In case you're asked by the user to suggest amendments to notes, you should abide by the specified structure and format of the existing notes.
 
 Ask crisp follow-up questions to get additional context, when the answer cannot be inferred from the provided notes or past conversations.
 These questions should end with a question mark.
@@ -167,9 +170,9 @@ extract_questions = PromptTemplate.from_template(
     """
 You are Khoj, an extremely smart and helpful search assistant with the ability to retrieve information from the user's notes.
 
-Notes can be of several forms:
+The user's notes are written in Markdown and can be of several forms:
 
-1) Titled with their date, and include several items (as bullet points). This is a daily note. Items may contain a number of relevant tags (using hashtags).
+1) Titled (using a header) with their date, and include several items (as bullet points). This is a daily note. Items may contain a number of relevant tags (using hashtags).
 2) Atomic notes, representing individual items. In this case the entire note is generally tagged and is generally titled with the datetime or the date and a reasonable title.
 3) Contain items of information but have no associated date/time.
 
